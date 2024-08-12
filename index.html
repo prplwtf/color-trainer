@@ -11,12 +11,14 @@
 </head>
 <body data-bs-theme="light">
   <div class="container py-5">
-    <h2 class="text-center text-primary">
+    <!-- Title -->
+    <h2 class="text-center text-primary mb-3">
       <i class="bi bi-palette2"></i>
       <span class="fw-bold">color</span> trainer
     </h2>
     
-    <h4 class="text-center mt-3">
+    <!-- Score -->
+    <h4 class="text-center mb-5">
       <span class="text-light px-2 bg-primary rounded-4">
         <span id="ScoreCounter Correct">0</span>
         correct</span>
@@ -24,5 +26,36 @@
       <span id="ScoreCounter Total">0</span>
       questions
     </h4>
+
+    <!-- Question -->
+    <div class="text-center mb-4 pt-5">
+      Pick the hex code that resembles
+      <span id="ColorBox" class="px-2 bg-black text-light rounded-4">this color</span>
+      the closest
+    </div>
+
+    <!-- Answers -->
+    <div class="row">
+      <div class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+        <span id="QuizAnswer1">#ffffff</span>
+        <span class="ripple-surface"></span>
+      </div>
+      <div class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+        <span id="QuizAnswer2">#ffffff</span>
+        <span class="ripple-surface"></span>
+      </div>
+      <div class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+        <span id="QuizAnswer3">#ffffff</span>
+        <span class="ripple-surface"></span>
+      </div>
+      
+    </div>
   </div>
 </body>
+<script>
+  // Initialize Ripple
+  const rippleSurface = Array.prototype.slice.call(document.querySelectorAll('.ripple-surface'))
+  rippleSurface.map(s => {
+    return new mdc.ripple.MDCRipple(s)
+  })
+</script>
