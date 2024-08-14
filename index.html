@@ -33,21 +33,21 @@
     <!-- Question -->
     <div class="text-center mb-4 pt-5">
       Pick the hex code that resembles
-      <span id="ColorBox" class="px-2 rounded-4">this color</span>
+      <span id="ColorBox" class="px-2 rounded-4" style="transition: background-color .25s, color .25s">this color</span>
       the closest
     </div>
 
     <!-- Answers -->
     <div class="row">
-      <div onclick="QuizSelect(1)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+      <div id="AnswerContainer1" onclick="QuizSelect(1)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030; transition: background-color .25s, color .25s">
         <span id="QuizAnswer1">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
-      <div onclick="QuizSelect(2)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+      <div id="AnswerContainer2" onclick="QuizSelect(2)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030; transition: background-color .25s, color .25s">
         <span id="QuizAnswer2">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
-      <div onclick="QuizSelect(3)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+      <div id="AnswerContainer3" onclick="QuizSelect(3)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030; transition: background-color .25s, color .25s">
         <span id="QuizAnswer3">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
