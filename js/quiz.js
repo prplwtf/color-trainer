@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Create a variable that increments on every quiz question
   window.QuestionCount = 0
+  // Create a variable that keeps track of total correct answers
+  window.CorrectScore = 0
 
   CreateQuestion()
 });
@@ -31,6 +33,13 @@ function CreateQuestion() {
   // Increment question count
   ScoreCounterTotal.innerHTML = window.QuestionCount
   window.QuestionCount = window.QuestionCount + 1
+
+  // Increment correct answers count
+  if(window.GuessAttempts == 1) {
+    window.CorrectScore = window.CorrectScore + 1
+    ScoreCounterCorrect.innerHTML = window.CorrectScore
+  }
+  window.GuessAttempts = 0
 
   function getRandomHexColor() {
     // Generate random hex color
@@ -68,6 +77,7 @@ function CreateQuestion() {
 }
 
 function QuizSelect(answer) {
+  window.GuessAttempts = window.GuessAttempts + 1
   window["AnswerContainer"+answer].style.backgroundColor = window["QuizAnswer"+answer].innerHTML
   window["QuizAnswer"+answer].style.color = getContrastColor(window["QuizAnswer"+answer].innerHTML)
   if(answer == window.CorrectAnswer) {
