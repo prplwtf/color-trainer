@@ -8,6 +8,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@material/ripple@14.0.0/dist/mdc.ripple.min.js" integrity="sha384-9QANVmWxL3S8VRs8x1Q+bF1Zzogpy7P/Qw1+y5qHLdC1ig0EuoHg9VbB1SXyecdZ" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@materialstyle/materialstyle@3.1.1/dist/js/materialstyle.min.js" integrity="sha384-rqhP61M9WSmzd7+ssgyoWP2I+R68vVHx7o+UmmIs6/Nxe8Lt1DoF6+0CKptZIXC0" crossorigin="anonymous"></script>
+  
+  <!-- Import scripts -->
+  <script src="js/quiz.js"></script>
 </head>
 <body data-bs-theme="light">
   <div class="container py-5">
@@ -20,31 +23,31 @@
     <!-- Score -->
     <h4 class="text-center mb-5">
       <span class="text-light px-2 bg-primary rounded-4">
-        <span id="ScoreCounter Correct">0</span>
+        <span id="ScoreCounterCorrect">0</span>
         correct</span>
       out of
-      <span id="ScoreCounter Total">0</span>
+      <span id="ScoreCounterTotal">0</span>
       questions
     </h4>
 
     <!-- Question -->
     <div class="text-center mb-4 pt-5">
       Pick the hex code that resembles
-      <span id="ColorBox" class="px-2 bg-black text-light rounded-4">this color</span>
+      <span id="ColorBox" class="px-2 rounded-4">this color</span>
       the closest
     </div>
 
     <!-- Answers -->
     <div class="row">
-      <div class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+      <div onclick="QuizSelect(1)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
         <span id="QuizAnswer1">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
-      <div class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+      <div onclick="QuizSelect(2)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
         <span id="QuizAnswer2">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
-      <div class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
+      <div onclick="QuizSelect(3)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030;">
         <span id="QuizAnswer3">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
