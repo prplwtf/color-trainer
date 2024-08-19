@@ -60,6 +60,9 @@ function CreateQuestion() {
   ScoreCounterCorrectContainer.style.color = getContrastColor(HexColor)
   ColorBox.style.color = getContrastColor(HexColor)
 
+  // Change question text
+  ColorBox.innerHTML = HexColor
+
   function getSimilarHexColor(hexColor) {
     // Convert hexColor into RGB values
     let r = parseInt(hexColor.slice(1, 3), 16);
