@@ -2,6 +2,9 @@
 <head>
   <title id="AppTitle">color trainer</title>
 
+  <!-- Meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- Import libraries -->
   <link rel="stylesheet" href="css/materialstyle.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,14 +18,14 @@
 <body data-bs-theme="light">
   <div class="container py-5">
     <!-- Title -->
-    <h2 class="text-center text-primary mb-3">
+    <h2 class="text-center mb-3 transition-color" id="TitleContainer">
       <i class="bi bi-palette2"></i>
       <span class="fw-bold">color</span> trainer
     </h2>
     
     <!-- Score -->
     <h4 class="text-center mb-5">
-      <span class="text-light px-2 bg-primary rounded-4">
+      <span class="px-2 py-1 rounded-pill transition-color" id="ScoreCounterCorrectContainer">
         <span id="ScoreCounterCorrect">0</span>
         correct</span>
       out of
@@ -31,23 +34,23 @@
     </h4>
 
     <!-- Question -->
-    <div class="text-center mb-4 pt-5">
+    <div class="text-center mb-4 pt-2">
       Pick the hex code that resembles
-      <span id="ColorBox" class="px-2 rounded-4" style="transition: background-color .25s, color .25s">this color</span>
+      <span id="ColorBox" class="px-2 py-1 rounded-pill transition-color">this color</span>
       the closest
     </div>
 
     <!-- Answers -->
     <div class="row">
-      <div id="AnswerContainer1" onclick="QuizSelect(1)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030; transition: background-color .25s, color .25s">
+      <div id="AnswerContainer1" onclick="QuizSelect(1)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color" style="--mdc-ripple-color: #00000030; margin-bottom: 12px;">
         <span id="QuizAnswer1">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
-      <div id="AnswerContainer2" onclick="QuizSelect(2)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030; transition: background-color .25s, color .25s">
+      <div id="AnswerContainer2" onclick="QuizSelect(2)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color" style="--mdc-ripple-color: #00000030; margin-bottom: 12px;">
         <span id="QuizAnswer2">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
-      <div id="AnswerContainer3" onclick="QuizSelect(3)" class="col text-center p-3 border rounded-4 mx-2 position-relative" style="--mdc-ripple-color: #00000030; transition: background-color .25s, color .25s">
+      <div id="AnswerContainer3" onclick="QuizSelect(3)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color" style="--mdc-ripple-color: #00000030; margin-bottom: 12px;">
         <span id="QuizAnswer3">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
@@ -62,3 +65,8 @@
     return new mdc.ripple.MDCRipple(s)
   })
 </script>
+<style>
+  .transition-color {
+    transition: background-color .25s, color .25s
+  }
+</style>

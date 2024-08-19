@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Get elements
+  let TitleContainer = document.getElementById("TitleContainer")
   let ScoreCounterCorrect = document.getElementById("ScoreCounterCorrect")
+  let ScoreCounterCorrectContainer = document.getElementById("ScoreCounterCorrectContainer")
   let ScoreCounterTotal = document.getElementById("ScoreCounterTotal")
   let ColorBox = document.getElementById("ColorBox")
   let AnswerContainer1 = document.getElementById("AnswerContainer1")
@@ -48,7 +50,14 @@ function CreateQuestion() {
   }
 
   let HexColor = getRandomHexColor()
+
+  // Change background colors
   ColorBox.style.backgroundColor = HexColor
+  ScoreCounterCorrectContainer.style.backgroundColor = HexColor
+
+  // Change foreground colors
+  TitleContainer.style.color = HexColor
+  ScoreCounterCorrectContainer.style.color = getContrastColor(HexColor)
   ColorBox.style.color = getContrastColor(HexColor)
 
   function getSimilarHexColor(hexColor) {
