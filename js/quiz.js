@@ -79,28 +79,42 @@ function CreateQuestion() {
 
   // Pick correct option
   window.CorrectAnswer = Math.floor(Math.random() * 3) + 1;
-  window["QuizAnswer"+CorrectAnswer].innerHTML = getSimilarHexColor(HexColor)
+  let SimilarHex = getSimilarHexColor(HexColor);
+  window["QuizAnswer"+CorrectAnswer].innerHTML = SimilarHex
+  window["AnswerContainer"+CorrectAnswer].style.setProperty("--mdc-ripple-color", SimilarHex)
 
   // Assign incorrect options
   // FIXME: Random hex colors have a chance of being more similar than the correct answer
-  if(window.CorrectAnswer != 1) { QuizAnswer1.innerHTML = getRandomHexColor() }
-  if(window.CorrectAnswer != 2) { QuizAnswer2.innerHTML = getRandomHexColor() }
-  if(window.CorrectAnswer != 3) { QuizAnswer3.innerHTML = getRandomHexColor() }
+  if(window.CorrectAnswer != 1) { color = getRandomHexColor(); QuizAnswer1.innerHTML = color; AnswerContainer1.style.setProperty("--mdc-ripple-color", color) }
+  if(window.CorrectAnswer != 2) { color = getRandomHexColor(); QuizAnswer2.innerHTML = color; AnswerContainer2.style.setProperty("--mdc-ripple-color", color) }
+  if(window.CorrectAnswer != 3) { color = getRandomHexColor(); QuizAnswer3.innerHTML = color; AnswerContainer3.style.setProperty("--mdc-ripple-color", color) }
 }
 
 function QuizSelect(answer) {
+  if(window.AnswerBlock == true) return;
+
   window.GuessAttempts = window.GuessAttempts + 1
   window["AnswerContainer"+answer].style.backgroundColor = window["QuizAnswer"+answer].innerHTML
   window["QuizAnswer"+answer].style.color = getContrastColor(window["QuizAnswer"+answer].innerHTML)
   if(answer == window.CorrectAnswer) {
+    window.AnswerBlock = true
     setTimeout(() => {
+      AnswerContainer1.style.opacity = 0
+      AnswerContainer2.style.opacity = 0
+      AnswerContainer3.style.opacity = 0
       AnswerContainer1.style.backgroundColor = null
       AnswerContainer2.style.backgroundColor = null
       AnswerContainer3.style.backgroundColor = null
       QuizAnswer1.style.color = null
       QuizAnswer2.style.color = null
       QuizAnswer3.style.color = null
+    }, 250)
+    setTimeout(() => {
+      AnswerContainer1.style.opacity = 1
+      AnswerContainer2.style.opacity = 1
+      AnswerContainer3.style.opacity = 1
       CreateQuestion()
-    }, 500)
+      window.AnswerBlock = false
+    }, 650)
   }
 }

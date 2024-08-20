@@ -42,15 +42,15 @@
 
     <!-- Answers -->
     <div class="row">
-      <div id="AnswerContainer1" onclick="QuizSelect(1)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color" style="--mdc-ripple-color: #00000030; margin-bottom: 12px;">
+      <div id="AnswerContainer1" onclick="QuizSelect(1)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color quiz-answer">
         <span id="QuizAnswer1">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
-      <div id="AnswerContainer2" onclick="QuizSelect(2)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color" style="--mdc-ripple-color: #00000030; margin-bottom: 12px;">
+      <div id="AnswerContainer2" onclick="QuizSelect(2)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color quiz-answer">
         <span id="QuizAnswer2">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
-      <div id="AnswerContainer3" onclick="QuizSelect(3)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color" style="--mdc-ripple-color: #00000030; margin-bottom: 12px;">
+      <div id="AnswerContainer3" onclick="QuizSelect(3)" class="col-sm-12 col-md text-center p-3 border rounded-4 mx-md-2 my-md-0 mx-sm-0 mx-xs-0 my-sm-2 my-xs-2 position-relative transition-color quiz-answer">
         <span id="QuizAnswer3">#ffffff</span>
         <span class="ripple-surface"></span>
       </div>
@@ -67,6 +67,12 @@
 </script>
 <style>
   .transition-color {
-    transition: background-color .25s, color .25s
+    transition: background-color .25s, color .25s, opacity .25s
+  }
+  .quiz-answer {
+    --mdc-ripple-hover-opacity: 0;
+    --mdc-ripple-focus-opacity: 0;
+    --mdc-ripple-press-opacity: 1;
+    margin-bottom: 12px;
   }
 </style>
