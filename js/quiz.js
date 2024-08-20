@@ -75,7 +75,7 @@ function CreateQuestion() {
     // Convert adjusted RGB values back into hex.
     const similarHex = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
     return similarHex;
-}
+  }
 
   // Pick correct option
   window.CorrectAnswer = Math.floor(Math.random() * 3) + 1;
